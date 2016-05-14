@@ -5,7 +5,7 @@ Home: https://github.com/Toblerity/Shapely
 
 Package license: BSD
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/shapely-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/shapely-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/shapely-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/shapely-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/shapely-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/shapely-feedstock/branch/master)
