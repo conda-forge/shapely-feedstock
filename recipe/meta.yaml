@@ -1,4 +1,4 @@
-{% set version = "1.5.15" %}
+{% set version = "1.5.16" %}
 
 package:
     name: shapely
@@ -6,8 +6,8 @@ package:
 
 source:
     fn: Shapely-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-    md5: c2e06fb89cdbd959b89ae69794ede3c0
+    url: https://github.com/Toblerity/Shapely/archive/{{ version }}.tar.gz
+    sha256: 3a0940dab0bc0de0d572b7993f61a4d9a38ce17608573e676c1413b5de0cf776
     patches:
         - geos_c.patch
 
@@ -21,7 +21,7 @@ requirements:
         - geos >=3.4
         - cython
         - numpy x.x
-        - msinttypes  # [win]
+        - msinttypes  # [win and py<35]
     run:
         - python
         - geos >=3.4
@@ -35,7 +35,7 @@ test:
 
 about:
     home: https://github.com/Toblerity/Shapely
-    license: BSD
+    license: BSD 3-Clause
     summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
 
 extra:
