@@ -1,4 +1,4 @@
-{% set version = "1.5.16" %}
+{% set version = "1.5.17" %}
 
 package:
     name: shapely
@@ -7,12 +7,12 @@ package:
 source:
     fn: Shapely-{{ version }}.tar.gz
     url: https://github.com/Toblerity/Shapely/archive/{{ version }}.tar.gz
-    sha256: 3a0940dab0bc0de0d572b7993f61a4d9a38ce17608573e676c1413b5de0cf776
+    sha256: 85dd42a3e229f434642ad39744ebc82cd352931c6686d858bd9607649b5a4d8a
     patches:
         - geos_c.patch
 
 build:
-    number: 1
+    number: 0
 
 requirements:
     build:
@@ -44,3 +44,4 @@ extra:
   recipe-maintainers:
     - ocefpaf
     - pelson
+    - phobson
