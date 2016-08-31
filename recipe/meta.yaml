@@ -32,8 +32,8 @@ test:
         - shapely
         - shapely.speedups._speedups
         - shapely.vectorized._vectorized
-    commands:
-        - conda inspect linkages -n _test shapely  # [not win]
+    # commands:
+    #     - conda inspect linkages -n _test shapely  # [not win]
 
 about:
     home: https://github.com/Toblerity/Shapely
