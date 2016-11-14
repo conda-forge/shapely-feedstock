@@ -35,7 +35,7 @@ test:
     - shapely.speedups._speedups
     - shapely.vectorized._vectorized
   commands:
-    - cp -r $SRC_DIR/tests /tmp && cd /tmp && py.test --with-speedups  # [not win]
+    - cp -r $SRC_DIR/tests /tmp && cd /tmp && py.test --with-speedups  # [linux]
     #- conda inspect linkages -p $PREFIX shapely  # [not win]
     #- conda inspect objects -p $PREFIX shapely  # [osx]
 
