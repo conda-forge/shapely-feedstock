@@ -6,13 +6,13 @@ package:
 
 source:
   fn: Shapely-{{ version }}.tar.gz
-  url: https://github.com/Toblerity/Shapely/archive/{{ version }}.tar.gz
-  sha256: 85dd42a3e229f434642ad39744ebc82cd352931c6686d858bd9607649b5a4d8a
+  url: https://github.com/Toblerity/Shapely/archive/{{ version }}.post1.tar.gz
+  sha256: 1c0ba006875edef296aeed4f1cdadafa8f0c6c3bf5eae8aeae0f7e394ed62578
   patches:
     - geos_c.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -36,8 +36,8 @@ test:
     - shapely.vectorized._vectorized
   commands:
     - cp -r $SRC_DIR/tests /tmp && cd /tmp && py.test --with-speedups  # [linux]
-    #- conda inspect linkages -p $PREFIX shapely  # [not win]
-    #- conda inspect objects -p $PREFIX shapely  # [osx]
+    - conda inspect linkages -p $PREFIX shapely  # [not win]
+    - conda inspect objects -p $PREFIX shapely  # [osx]
 
 about:
   home: https://github.com/Toblerity/Shapely
