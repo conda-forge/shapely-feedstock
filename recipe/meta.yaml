@@ -12,19 +12,19 @@ source:
     - geos_c.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
     - python
     - setuptools
-    - geos 3.5.*
+    - geos 3.5.1
     - cython
     - numpy x.x
     - msinttypes  # [win and py<35]
   run:
     - python
-    - geos 3.5.*
+    - geos 3.5.1
     - numpy x.x
 
 test:
