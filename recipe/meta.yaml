@@ -12,20 +12,24 @@ source:
     - geos_c.patch
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
     - python
     - setuptools
-    - geos 3.5.1
     - cython
-    - numpy x.x
+    - numpy 1.7.*  # [py27]
+    - numpy 1.9.*  # [py35]
+    - numpy 1.11.*  # [py36]
+    - geos 3.5.1
     - msinttypes  # [win and py<35]
   run:
     - python
+    - numpy >=1.7  # [py27]
+    - numpy >=1.9  # [py35]
+    - numpy >=1.11  # [py36]
     - geos 3.5.1
-    - numpy x.x
 
 test:
   requires:
@@ -42,6 +46,7 @@ test:
 about:
   home: https://github.com/Toblerity/Shapely
   license: BSD 3-Clause
+  license_file: LICENSE.txt
   summary: 'Python package for manipulation and analysis of geometric objects in the Cartesian plane.'
 
 extra:
