@@ -32,6 +32,8 @@ requirements:
     - geos 3.5.1
 
 test:
+  source_files:
+    tests
   requires:
     - pytest
   imports:
@@ -39,7 +41,7 @@ test:
     - shapely.speedups._speedups
     - shapely.vectorized._vectorized
   commands:
-    - cp -r $SRC_DIR/tests /tmp && cd /tmp && py.test --with-speedups  # [linux]
+    - py.test tests --with-speedups  # [linux]
     - conda inspect linkages -p $PREFIX shapely  # [not win]
     - conda inspect objects -p $PREFIX shapely  # [osx]
 
