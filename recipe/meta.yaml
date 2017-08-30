@@ -1,39 +1,36 @@
-{% set version = "1.5.17" %}
+{% set version = "1.6.0" %}
 
 package:
   name: shapely
   version: {{ version }}
 
 source:
-  fn: Shapely-{{ version }}.tar.gz
-  url: https://github.com/Toblerity/Shapely/archive/{{ version }}.post1.tar.gz
-  sha256: 1c0ba006875edef296aeed4f1cdadafa8f0c6c3bf5eae8aeae0f7e394ed62578
-  patches:
-    - geos_c.patch
+  url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
+  sha256: 34d07cb277a5acf9ca5583a5b926678c58fb512d4fb4fcccbf3992e995b7ef60
 
 build:
-  number: 4
+  number: 0
 
 requirements:
   build:
     - python
     - setuptools
     - cython
-    - numpy 1.7.*  # [py27]
-    - numpy 1.9.*  # [py35]
-    - numpy 1.11.*  # [py36]
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - geos 3.5.1
     - msinttypes  # [win and py<35]
   run:
     - python
-    - numpy >=1.7  # [py27]
-    - numpy >=1.9  # [py35]
-    - numpy >=1.11  # [py36]
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - geos 3.5.1
 
 test:
   source_files:
-    tests
+    - tests
   requires:
     - pytest
   imports:
