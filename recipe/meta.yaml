@@ -7,9 +7,11 @@ package:
 source:
   url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
   sha256: 5ae137eb95ff615be399a285cf447913f845b0224e03d1167f638867eaccd0c7
+  patches:
+    - find_conda_geos.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
