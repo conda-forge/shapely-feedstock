@@ -1,4 +1,4 @@
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: shapely
@@ -6,12 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-  sha256: 5ae137eb95ff615be399a285cf447913f845b0224e03d1167f638867eaccd0c7
-  patches:
-    - find_conda_geos.patch
+  sha256: 0ed0db2ddc10e092de30c2ddae28cc8bd2543601b6af83877b76c3280f2537c6
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
