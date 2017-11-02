@@ -9,7 +9,7 @@ source:
   sha256: 0ed0db2ddc10e092de30c2ddae28cc8bd2543601b6af83877b76c3280f2537c6
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -19,14 +19,14 @@ requirements:
     - numpy 1.8.*  # [not (win and (py35 or py36))]
     - numpy 1.9.*  # [win and py35]
     - numpy 1.11.*  # [win and py36]
-    - geos 3.5.1
+    - geos 3.6.2
     - msinttypes  # [win and py<35]
   run:
     - python
     - numpy >=1.8  # [not (win and (py35 or py36))]
     - numpy >=1.9  # [win and py35]
     - numpy >=1.11  # [win and py36]
-    - geos 3.5.1
+    - geos 3.6.2
 
 test:
   source_files:
