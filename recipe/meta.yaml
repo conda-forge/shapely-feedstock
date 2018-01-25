@@ -1,12 +1,12 @@
-{% set version = "1.6.3" %}
+{% set version = "1.6.4" %}
 
 package:
   name: shapely
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-  sha256: 14152f111c7711fc6756fd538ec12fc8cdde7419f869b244922f71f61b2a6c6b
+  url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.post1.tar.gz
+  sha256: 30df7572d311514802df8dc0e229d1660bc4cbdcf027a8281e79c5fc2fcf02f2
 
 build:
   number: 0
@@ -39,8 +39,8 @@ test:
     - shapely.vectorized._vectorized
   commands:
     - py.test tests --with-speedups  # [linux]
-    - conda inspect linkages -p $PREFIX shapely  # [not win]
-    - conda inspect objects -p $PREFIX shapely  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/Toblerity/Shapely
