@@ -2,4 +2,5 @@
 
 export GEOS_DIR=$PREFIX
 
-$PYTHON setup.py install --single-version-externally-managed --record record.txt
+$PYTHON -m pip install --no-deps --ignore-installed .
+
