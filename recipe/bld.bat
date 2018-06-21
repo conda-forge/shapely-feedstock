@@ -4,7 +4,7 @@ set INCLUDE=%LIBRARY_INC%;%INCLUDE%;%RECIPE_DIR%
 
 set GEOS_LIBRARY_PATH=%LIBRARY_BIN%\geos_c.dll
 
-"%PYTHON%" -m pip install --no-deps --ignore-installed . ^
+"%PYTHON%" -m pip install --no-deps --ignore-installed --verbose . ^
                           --global-option=build_ext ^
                           --global-option="-I%LIBRARY_INC%" ^
                           --global-option="-L%LIBRARY_LIB%" ^
