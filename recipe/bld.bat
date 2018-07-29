@@ -10,4 +10,3 @@ set GEOS_LIBRARY_PATH=%LIBRARY_BIN%\geos_c.dll
                           --global-option="-L%LIBRARY_LIB%" ^
                           --global-option="-lgeos_c"
 if errorlevel 1 exit 1
-
