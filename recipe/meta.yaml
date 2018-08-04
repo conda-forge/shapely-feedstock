@@ -36,8 +36,6 @@ test:
     - shapely.vectorized._vectorized
   commands:
     - py.test tests --with-speedups  # [linux]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/Toblerity/Shapely
