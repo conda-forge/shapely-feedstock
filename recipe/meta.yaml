@@ -9,7 +9,7 @@ source:
   sha256: c4b87bb61fc3de59fc1f85e71a79b0c709dc68364d9584473697aad4aa13240f
 
 build:
-  number: 1004
+  number: 1005
   skip: True  # [win and vc<14]
 
 requirements:
@@ -21,7 +21,6 @@ requirements:
     - cython
     - numpy
     - geos
-    - msinttypes  # [win and vc<14]
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -33,16 +32,21 @@ test:
     - pytest
   imports:
     - shapely
+    - shapely.speedups
     - shapely.speedups._speedups
+    - shapely.vectorized
     - shapely.vectorized._vectorized
+    - shapely.geometry
+    - shapely.algorithms
+    - shapely.examples
   commands:
-    - py.test tests --with-speedups  # [linux]
+    - pytest tests --with-speedups
 
 about:
   home: https://github.com/Toblerity/Shapely
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: 'Python package for manipulation and analysis of geometric objects in the Cartesian plane.'
+  summary: "Python package for manipulation and analysis of geometric objects in the Cartesian plane"
 
 extra:
   recipe-maintainers:

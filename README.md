@@ -3,11 +3,11 @@ About shapely
 
 Home: https://github.com/Toblerity/Shapely
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane.
+Summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
 
 
 
