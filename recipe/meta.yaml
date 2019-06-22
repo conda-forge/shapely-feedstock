@@ -40,7 +40,7 @@ test:
     - shapely.algorithms
     - shapely.examples
   commands:
-    - pytest tests --with-speedups  # [not win]
+    - pytest tests --with-speedups
 
 about:
   home: https://github.com/Toblerity/Shapely
