@@ -3,9 +3,9 @@
 rm -rf shapely/speedups/_speedups.c
 rm -rf shapely/vectorized/_vectorized.c
 
-export GEOS_DIR=${PREFIX}
+cython shapely/speedups/_speedups.pyx
+cython shapely/vectorized/_vectorized.pyx
 
-# Workaround weird setup.py logic that only triggers force_cython if the MANIFEST.in file is present.
-touch MANIFEST.in
+export GEOS_DIR=${PREFIX}
 
 ${PYTHON} -m pip install --no-deps --ignore-installed .
