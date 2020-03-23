@@ -1,6 +1,6 @@
-from shapely import speedups;
+from shapely import speedups
 
-assert speedups.available;
+assert speedups.available
 
 speedups.enable()
 
