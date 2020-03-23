@@ -34,15 +34,16 @@ test:
     - pytest
   imports:
     - shapely
-    - shapely.speedups
-    - shapely.speedups._speedups
-    - shapely.vectorized
-    - shapely.vectorized._vectorized
+    - shapely.speedups  # [python_impl != 'pypy']
+    - shapely.speedups._speedups  # [python_impl != 'pypy']
+    - shapely.vectorized  # [python_impl != 'pypy']
+    - shapely.vectorized._vectorized  # [python_impl != 'pypy']
     - shapely.geometry
     - shapely.algorithms
     - shapely.examples
   commands:
-    - pytest tests --with-speedups
+    - pytest tests --with-speedups  # [python_impl != 'pypy']
+    - pytest tests  # [python_impl == 'pypy']
 
 about:
   home: https://github.com/Toblerity/Shapely

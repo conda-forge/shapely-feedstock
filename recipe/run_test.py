@@ -1,8 +1,11 @@
-from shapely import speedups
+import os
 
-assert speedups.available
 
-speedups.enable()
+if os.environ.get("pypy"):
+    from shapely import speedups
+
+    assert speedups.available
+    speedups.enable()
 
 from shapely.geometry import LineString
 
