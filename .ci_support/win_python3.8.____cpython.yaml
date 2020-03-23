@@ -19,6 +19,5 @@ python:
 vc:
 - '14'
 zip_keys:
-- - python
-  - vc
-  - c_compiler
+- - numpy
+  - python
