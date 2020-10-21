@@ -33,15 +33,16 @@ test:
   imports:
     - shapely
     - shapely.speedups
-    - shapely.speedups._speedups
-    - shapely.vectorized
-    - shapely.vectorized._vectorized
+    - shapely.speedups._speedups  # [python_impl == "cpython"]
+    - shapely.vectorized  # [python_impl == "cpython"]
+    - shapely.vectorized._vectorized  # [python_impl == "cpython"]
     - shapely.geometry
     - shapely.algorithms
     - shapely.examples
     - shapely.geos
   commands:
-    - pytest tests --with-speedups
+    - pytest tests --with-speedups  # [python_impl == "cpython"]
+    - pytest tests --without-speedups  # [python_impl == "pypy"]
 
 about:
   home: https://github.com/Toblerity/Shapely

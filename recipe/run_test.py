@@ -1,8 +1,12 @@
-from shapely import speedups;
+from shapely import speedups
+import platform
 
-assert speedups.available;
+is_pypy = platform.python_implementation().lower() == 'pypy'
 
-speedups.enable()
+if not is_pypy:
+    assert speedups.available
+
+    speedups.enable()
 
 from shapely.geometry import LineString
 
