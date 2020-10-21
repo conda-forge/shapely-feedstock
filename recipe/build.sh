@@ -3,8 +3,8 @@
 rm -rf shapely/speedups/_speedups.c
 rm -rf shapely/vectorized/_vectorized.c
 
-cython shapely/speedups/_speedups.pyx
-cython shapely/vectorized/_vectorized.pyx
+cython -3 shapely/speedups/_speedups.pyx
+cython -3 shapely/vectorized/_vectorized.pyx
 
 export GEOS_DIR=${PREFIX}
 
