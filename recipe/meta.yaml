@@ -9,7 +9,7 @@ source:
   sha256: 1641724c1055459a7e2b8bbe47ba25bdc89554582e62aec23cb3f3ca25f9b129
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
@@ -41,7 +41,9 @@ test:
     - shapely.examples
     - shapely.geos
   commands:
-    - pytest tests --with-speedups
+    # SvgTestCase.test_collection is failing due to GEOS 3.9 different coordinate order
+    # (it's fixed on master so can be removed again with Shapely 1.8)
+    - pytest tests --with-speedups -k "not test_collection"
 
 about:
   home: https://github.com/Toblerity/Shapely
