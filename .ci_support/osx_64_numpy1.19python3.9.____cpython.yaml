@@ -9,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 geos:
-- 3.9.0
+- 3.9.1
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
