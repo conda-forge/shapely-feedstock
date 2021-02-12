@@ -32,18 +32,10 @@ test:
     - pytest
   imports:
     - shapely
-    - shapely.speedups
-    - shapely.speedups._speedups
-    - shapely.vectorized
-    - shapely.vectorized._vectorized
     - shapely.geometry
     - shapely.algorithms
     - shapely.examples
     - shapely.geos
-  commands:
-    # SvgTestCase.test_collection is failing due to GEOS 3.9 different coordinate order
-    # (it's fixed on master so can be removed again with Shapely 1.8)
-    - pytest tests --with-speedups -k "not test_collection"
 
 about:
   home: https://github.com/Toblerity/Shapely

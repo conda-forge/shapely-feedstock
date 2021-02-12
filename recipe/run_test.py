@@ -1,8 +1,25 @@
-from shapely import speedups;
+import platform
+import py
 
-assert speedups.available;
+implementation = platform.python_implementation()
+print('implementation: {}'.format(implementation))
 
-speedups.enable()
+# SvgTestCase.test_collection is failing due to GEOS 3.9 different coordinate order
+# (it's fixed on master so can be removed again with Shapely 1.8)
+pytest_args = ['tests', '-k', 'not test_collection']
+
+if implementation != 'PyPy':
+    from shapely import speedups
+    import shapely.speedups._speedups
+    import shapely.vectorized
+    import shapely.vectorized._vectorized
+
+    assert speedups.available;
+
+    speedups.enable()
+    pytest_args.append('--with-speedups')
+
+py.test.cmdline.main(pytest_args)
 
 from shapely.geometry import LineString
 
