@@ -9,8 +9,8 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   ln -sf $PREFIX/bin/python $BUILD_PREFIX/bin/python
 fi
 
-cython shapely/speedups/_speedups.pyx
-cython shapely/vectorized/_vectorized.pyx
+python -m cython shapely/speedups/_speedups.pyx
+python -m cython shapely/vectorized/_vectorized.pyx
 
 export GEOS_DIR=${PREFIX}
 
