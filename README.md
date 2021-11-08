@@ -160,13 +160,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1906&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/shapely-feedstock?branchName=master&jobName=osx&configuration=osx_64_numpy1.21python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_arm64_numpy1.19python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1906&branchName=master">
@@ -178,13 +171,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1906&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/shapely-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_numpy1.19python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_numpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1906&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/shapely-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_numpy1.21python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
