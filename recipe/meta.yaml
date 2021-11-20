@@ -9,10 +9,7 @@ source:
   sha256: f5307ee14ba4199f8bbcf6532ca33064661c1433960c432c84f0daa73b47ef9c
 
 build:
-  number: 3
-  # tests are failing for osx and py 3.10
-  # see https://github.com/Toblerity/Shapely/issues/1227
-  skip: True  # [osx and py>39]
+  number: 4
 
 requirements:
   build:
@@ -52,6 +49,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - akrherz
     - ocefpaf
     - pelson
     - phobson
