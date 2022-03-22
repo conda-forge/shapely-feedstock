@@ -22,6 +22,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools <=59.8
     - cython
     - numpy
     - geos
