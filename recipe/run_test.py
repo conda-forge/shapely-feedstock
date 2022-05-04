@@ -12,7 +12,7 @@ print(f'python version: {py_version}')
 
 pytest_args = ['tests']
 
-try:
+if implementation != 'PyPy':
     from shapely import speedups
     import shapely.speedups._speedups
     import shapely.vectorized
@@ -22,8 +22,6 @@ try:
 
     speedups.enable()
     pytest_args.append('--with-speedups')
-except (ImportError, ModuleNotFoundError) as exp:
-    print(f"skipping speedups test due to {exp}")
 
 py.test.cmdline.main(pytest_args)
 
