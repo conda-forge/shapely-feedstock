@@ -42,7 +42,7 @@ test:
     - shapely.geos
 
 about:
-  home: https://github.com/Toblerity/Shapely
+  home: https://github.com/shapely/shapely
   license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
@@ -55,3 +55,4 @@ extra:
     - phobson
     - xylar
     - jorisvandenbossche
+    - mwtoews
