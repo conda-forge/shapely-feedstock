@@ -7,8 +7,6 @@ package:
 source:
   url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
   sha256: 0956a3aced40c31a957a52aa1935467334926844a6776b469acb0760a5e6aba8
-  patches:
-    - patch_setup.patch
 
 build:
   number: 0
