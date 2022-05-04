@@ -7,8 +7,8 @@ set GEOS_LIBRARY_PATH=%LIBRARY_BIN%\geos_c.dll
 del /f shapely\speedups\_speedups.c
 del /f shapely\vectorized\_vectorized.c
 
-cython shapely\speedups\_speedups.pyx
-cython shapely\vectorized\_vectorized.pyx
+"%PYTHON%" -m cython shapely\speedups\_speedups.pyx
+"%PYTHON%" -m cython shapely\vectorized\_vectorized.pyx
 
 "%PYTHON%" -m pip install --no-deps --ignore-installed --verbose . ^
                           --global-option=build_ext ^
