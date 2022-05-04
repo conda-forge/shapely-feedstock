@@ -1,9 +1,6 @@
 
 set GEOS_LIBRARY_PATH=%LIBRARY_BIN%
 
-"%PYTHON%" -m cython shapely\speedups\_speedups.pyx
-"%PYTHON%" -m cython shapely\vectorized\_vectorized.pyx
-
 "%PYTHON%" setup.py build_ext ^
                     -I"%LIBRARY_INC%" ^
 		    -lgeos_c ^
