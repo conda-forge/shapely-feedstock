@@ -1,7 +1,7 @@
 About shapely
 =============
 
-Home: https://github.com/Toblerity/Shapely
+Home: https://github.com/shapely/shapely
 
 Package license: BSD-3-Clause
 
@@ -388,6 +388,7 @@ Feedstock Maintainers
 
 * [@akrherz](https://github.com/akrherz/)
 * [@jorisvandenbossche](https://github.com/jorisvandenbossche/)
+* [@mwtoews](https://github.com/mwtoews/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@pelson](https://github.com/pelson/)
 * [@phobson](https://github.com/phobson/)
