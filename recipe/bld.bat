@@ -1,8 +1,8 @@
 
 set GEOS_LIBRARY_PATH=%LIBRARY_BIN%
 
-"%PYTHON%" -m cython shapely\speedups\_speedups.pyx
-"%PYTHON%" -m cython shapely\vectorized\_vectorized.pyx
+del /f shapely\speedups\_speedups.c
+del /f shapely\vectorized\_vectorized.c
 
 "%PYTHON%" setup.py build_ext ^
                     -I"%LIBRARY_INC%" ^
