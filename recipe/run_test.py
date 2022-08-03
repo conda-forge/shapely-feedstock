@@ -12,17 +12,6 @@ print(f'python version: {py_version}')
 
 pytest_args = ['tests']
 
-if implementation != 'PyPy':
-    from shapely import speedups
-    import shapely.speedups._speedups
-    import shapely.vectorized
-    import shapely.vectorized._vectorized
-
-    assert speedups.available;
-
-    speedups.enable()
-    pytest_args.append('--with-speedups')
-
 py.test.cmdline.main(pytest_args)
 
 from shapely.geometry import LineString
@@ -32,6 +21,3 @@ ls = LineString([(0, 0), (10, 0)])
 r = ls.wkt
 area = ls.buffer(10).area
 
-# Check if we can import lgeos.
-# https://github.com/conda-forge/shapely-feedstock/issues/17
-from shapely.geos import lgeos

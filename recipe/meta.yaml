@@ -5,11 +5,15 @@ package:
   version: {{ version.split('.post')[0] }}
 
 source:
-  url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
   sha256: 599a030ff2ba2344a2056c74bea888887c2c7206261babf182c92eb73c646c9b
 
 build:
   number: 0
+  script:
+    - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
+    - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -40,6 +44,10 @@ test:
     - shapely.algorithms
     - shapely.examples
     - shapely.geos
+  commands:
+  # test_setattr_disallowed fails on pypy
+  # (TODO skip this test automatically in Shapely for pypy)
+    - pytest --pyargs shapely.tests -k "not test_setattr_disallowed"
 
 about:
   home: https://github.com/shapely/shapely
