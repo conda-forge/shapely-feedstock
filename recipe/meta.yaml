@@ -1,4 +1,4 @@
-{% set version = "1.8rc1" %}
+{% set version = "1.8.2" %}
 
 package:
   name: shapely
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-  sha256: d74d554044c0edaa34c15a477dd771f64cd2b43be2e4f4b948f6e41193e12fb1
+  sha256: 572af9d5006fd5e3213e37ee548912b0341fb26724d6dc8a4e3950c10197ebb6
 
 build:
-  number: 0
+  number: 3
 
 requirements:
   build:
@@ -42,15 +42,17 @@ test:
     - shapely.geos
 
 about:
-  home: https://github.com/Toblerity/Shapely
+  home: https://github.com/shapely/shapely
   license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
 
 extra:
   recipe-maintainers:
+    - akrherz
     - ocefpaf
     - pelson
     - phobson
     - xylar
     - jorisvandenbossche
+    - mwtoews
