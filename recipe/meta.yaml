@@ -1,4 +1,4 @@
-{% set version = "1.8.5" %}
+{% set version = "1.8.5.post1" %}
 
 package:
   name: shapely
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-  sha256: e82b6d60ecfb124120c88fe106a478596bbeab142116d7e7f64a364dac902a92
+  sha256: ef3be705c3eac282a28058e6c6e5503419b250f482320df2172abcbea642c831
 
 build:
   number: 0
