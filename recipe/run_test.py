@@ -20,7 +20,8 @@ if implementation == "PyPy":
         "test_pickle_persistence",
         "test_nearest_",
     ]
-    if target_platform == "win-64":
+    if target_platform in ["osx-64", "win-64"]:
+        pytest_args.append("--continue-on-collection-errors")
         skip_tests.append("test_vectorized")
 elif implementation == "CPython":
     from shapely import speedups
