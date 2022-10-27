@@ -11,9 +11,17 @@ py_version = sys.version_info[:2]
 print(f"python version: {py_version}")
 
 pytest_args = ["tests"]
+skip_tests = []
 
 if implementation == "PyPy":
-    pytest_args.extend(["-k", "not strtree"])
+    skip_tests += [
+        "test_query",
+        "test_references",
+        "test_pickle_persistence",
+        "test_nearest_",
+    ]
+    if target_platform == "win-64":
+        skip_tests.append("test_vectorized")
 elif implementation == "CPython":
     from shapely import speedups
     import shapely.speedups._speedups
@@ -25,8 +33,12 @@ elif implementation == "CPython":
     speedups.enable()
     pytest_args.append("--with-speedups")
 
-print(f"pytest_args={pytest_args}")
+if skip_tests:
+    pytest_args.extend(
+        ["-k", " and ".join(f"not {test}" for test in skip_tests)]
+    )
 
+print(f"pytest_args: {pytest_args}")
 retcode = pytest.main(pytest_args)
 assert retcode == 0
 
@@ -40,3 +52,5 @@ area = ls.buffer(10).area
 # Check if we can import lgeos.
 # https://github.com/conda-forge/shapely-feedstock/issues/17
 from shapely.geos import lgeos
+
+print(f"done {__file__}")
