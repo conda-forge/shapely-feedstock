@@ -4,15 +4,17 @@ import os
 import sys
 
 implementation = platform.python_implementation()
-print('implementation: {}'.format(implementation))
-target_platform = os.environ["target_platform"]
-print(f'target platform: {target_platform}')
+print(f"implementation: {implementation}")
+target_platform = os.environ.get("target_platform")
+print(f"target platform: {target_platform}")
 py_version = sys.version_info[:2]
-print(f'python version: {py_version}')
+print(f"python version: {py_version}")
 
-pytest_args = ['tests']
+pytest_args = ["tests"]
 
-if implementation != 'PyPy':
+if implementation == "PyPy":
+    pytest_args.extend(["-k", "not strtree"])
+elif implementation == "CPython":
     from shapely import speedups
     import shapely.speedups._speedups
     import shapely.vectorized
@@ -21,9 +23,12 @@ if implementation != 'PyPy':
     assert speedups.available
 
     speedups.enable()
-    pytest_args.append('--with-speedups')
+    pytest_args.append("--with-speedups")
 
-assert pytest.main(pytest_args) == 0
+print(f"pytest_args={pytest_args}")
+
+retcode = pytest.main(pytest_args)
+assert retcode == 0
 
 from shapely.geometry import LineString
 
