@@ -1,5 +1,5 @@
 import platform
-import py
+import pytest
 import os
 import sys
 
@@ -18,12 +18,12 @@ if implementation != 'PyPy':
     import shapely.vectorized
     import shapely.vectorized._vectorized
 
-    assert speedups.available;
+    assert speedups.available
 
     speedups.enable()
     pytest_args.append('--with-speedups')
 
-py.test.cmdline.main(pytest_args)
+assert pytest.main(pytest_args) == 0
 
 from shapely.geometry import LineString
 
