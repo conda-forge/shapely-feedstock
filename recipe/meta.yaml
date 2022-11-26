@@ -1,4 +1,4 @@
-{% set version = "2.0b2" %}
+{% set version = "2.0rc1" %}
 
 package:
   name: shapely
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
-  sha256: 4345ea7a75f6933325dbe82bdec14b4b4b16b15f6543eb5f5525f363430573d1
+  sha256: f09cdfd0d9a2d239afc92c299dabe4510fabb63ca7abf683eb48532fd63e63bd
 
 build:
   number: 0
