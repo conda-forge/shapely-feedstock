@@ -40,10 +40,6 @@ test:
     - pytest
   imports:
     - shapely
-    - shapely.geometry
-    - shapely.algorithms
-    - shapely.examples
-    - shapely.geos
   commands:
     - pytest --pyargs shapely.tests
 
