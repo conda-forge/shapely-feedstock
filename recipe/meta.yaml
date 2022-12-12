@@ -1,15 +1,19 @@
-{% set version = "1.8.5.post1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: shapely
   version: {{ version.split('.post')[0] }}
 
 source:
-  url: https://pypi.io/packages/source/S/Shapely/Shapely-{{ version }}.tar.gz
-  sha256: ef3be705c3eac282a28058e6c6e5503419b250f482320df2172abcbea642c831
+  url: https://pypi.io/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
+  sha256: 11f1b1231a6c04213fb1226c6968d1b1b3b369ec42d1e9655066af87631860ea
 
 build:
-  number: 2
+  number: 0
+  script:
+    - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
+    - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -36,10 +40,8 @@ test:
     - pytest
   imports:
     - shapely
-    - shapely.geometry
-    - shapely.algorithms
-    - shapely.examples
-    - shapely.geos
+  commands:
+    - pytest --pyargs shapely.tests
 
 about:
   home: https://github.com/shapely/shapely
