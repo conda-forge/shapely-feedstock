@@ -1,11 +1,11 @@
-About shapely
-=============
+About shapely-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shapely-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/shapely/shapely
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shapely-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python package for manipulation and analysis of geometric objects in the Cartesian plane
 
