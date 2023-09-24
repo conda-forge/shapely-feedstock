@@ -47,7 +47,7 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_to_wkt_multipoint_with_point_empty" %}
     {% set tests_to_skip = tests_to_skip + " or test_minimum_rotated_rectangle" %}
     {% set tests_to_skip = tests_to_skip + " or test_oriented_envelope" %}
-    - python -m pytest -k "not ({{ tests_to_skip }})" --pyargs shapely.tests
+    - python -m pytest -v -k "not ({{ tests_to_skip }})" --pyargs shapely.tests
 
 about:
   home: https://github.com/shapely/shapely
