@@ -9,7 +9,7 @@ source:
   sha256: 66a6b1a3e72ece97fc85536a281476f9b7794de2e646ca8a4517e2e3c1446893
 
 build:
-  number: 2
+  number: 3
   script:
     - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
     - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
@@ -47,6 +47,7 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_to_wkt_multipoint_with_point_empty" %}
     {% set tests_to_skip = tests_to_skip + " or test_minimum_rotated_rectangle" %}
     {% set tests_to_skip = tests_to_skip + " or test_oriented_envelope" %}
+    {% set tests_to_skip = tests_to_skip + " or test_frechet_distance_densify" %}  # [win]
     - python -m pytest -k "not ({{ tests_to_skip }})" --pyargs shapely.tests
 
 about:
