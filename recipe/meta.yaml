@@ -39,6 +39,7 @@ test:
   imports:
     - shapely
   commands:
+    {% set tests_to_skip = "" %}
     # crash on pypy + windows
     {% set tests_to_skip = "-k 'not test_frechet_distance_densify'" %}  # [win]
     - python -m pytest {{ tests_to_skip }} --pyargs shapely.tests
