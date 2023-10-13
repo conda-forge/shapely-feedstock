@@ -39,7 +39,9 @@ test:
   imports:
     - shapely
   commands:
-    - python -m pytest --pyargs shapely.tests
+    # crash on pypy + windows
+    {% set tests_to_skip = "-k 'not test_frechet_distance_densify'" %}  # [win]
+    - python -m pytest {{ tests_to_skip }} --pyargs shapely.tests
 
 about:
   home: https://github.com/shapely/shapely
