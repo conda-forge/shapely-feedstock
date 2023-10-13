@@ -1,4 +1,3 @@
-{% set tests_to_skip = "test_coverage_union_overlapping_inputs" %}
 {% set version = "2.0.2" %}
 
 package:
@@ -35,21 +34,12 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
 test:
-  source_files:
-    - tests
   requires:
     - pytest
   imports:
     - shapely
   commands:
-    # geos 3.12 tests skipped until next release
-    {% set tests_to_skip = "test_coverage_union_overlapping_inputs" %}
-    {% set tests_to_skip = tests_to_skip + " or test_coverage_union_non_polygon_inputs" %}
-    {% set tests_to_skip = tests_to_skip + " or test_to_wkt_multipoint_with_point_empty" %}
-    {% set tests_to_skip = tests_to_skip + " or test_minimum_rotated_rectangle" %}
-    {% set tests_to_skip = tests_to_skip + " or test_oriented_envelope" %}
-    {% set tests_to_skip = tests_to_skip + " or test_frechet_distance_densify" %}  # [win]
-    - python -m pytest -k "not ({{ tests_to_skip }})" --pyargs shapely.tests
+    - python -m pytest --pyargs shapely.tests
 
 about:
   home: https://github.com/shapely/shapely
