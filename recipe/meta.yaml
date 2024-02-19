@@ -35,7 +35,7 @@ requirements:
 
 test:
   requires:
-    - pytest
+    - pytest<8
   imports:
     - shapely
   commands:
