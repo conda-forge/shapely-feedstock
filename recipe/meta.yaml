@@ -35,13 +35,13 @@ requirements:
 
 test:
   requires:
-    - pytest<8
+    - pytest <8
   imports:
     - shapely
   commands:
-    - python -m pytest -x --pyargs shapely.tests  # [not win]
+    - python -m pytest --pyargs shapely.tests  # [not win]
     # crash on pypy + windows
-    - python -m pytest -x -k "not (test_frechet_distance_densify or test_dump_binary_load_hex)" --pyargs shapely.tests  # [win]
+    - python -m pytest -k "not (test_frechet_distance_densify or test_dump_binary_load_hex)" --pyargs shapely.tests  # [win]
 
 about:
   home: https://github.com/shapely/shapely
