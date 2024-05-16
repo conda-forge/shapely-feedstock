@@ -9,7 +9,7 @@ source:
   sha256: 5dc736127fac70009b8d309a0eeb74f3e08979e530cf7017f2f507ef62e6cfb8
 
 build:
-  number: 0
+  number: 1
   script:
     - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
     - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
@@ -23,6 +23,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - geos                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -31,7 +32,6 @@ requirements:
     - geos
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   requires:
