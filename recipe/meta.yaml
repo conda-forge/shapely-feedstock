@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: shapely
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
-  sha256: 5dc736127fac70009b8d309a0eeb74f3e08979e530cf7017f2f507ef62e6cfb8
+  sha256: bff2366bc786bfa6cb353d6b47d0443c570c32776612e527ee47b6df63fcfe32
 
 build:
-  number: 2
+  number: 0
   script:
     - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
     - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
