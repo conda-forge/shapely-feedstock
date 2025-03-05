@@ -15,7 +15,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64:alma9
 geos:
-- 3.13.0
+- 3.13.1
 numpy:
 - '2'
 pin_run_as_build:
