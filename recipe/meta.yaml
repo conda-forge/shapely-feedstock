@@ -1,15 +1,16 @@
-{% set version = "2.0rc2" %}
+{% set version = "2.1.0rc1" %}
 
 package:
   name: shapely
   version: {{ version.split('.post')[0] }}
 
 source:
-  url: https://pypi.io/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
-  sha256: 8aa15f1d281b9f6ffc06582415d1449c9a23616508b88b27ecafa60daa161af4
+  url: https://pypi.org/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
+  sha256: 32ffb7828d6ff944dea145a2859aa19b51bd943fc8632db5cc736ed38c381efb
 
 build:
   number: 0
+  skip: true  # [py<310]
   script:
     - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
     - set GEOS_LIBRARY_PATH=%LIBRARY_LIB%  # [win]
@@ -23,25 +24,26 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - geos                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
     - cython
     - numpy
     - geos
+    - setuptools
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
-  source_files:
-    - tests
   requires:
-    - pytest
+    - pytest <8
   imports:
     - shapely
   commands:
-    - pytest --pyargs shapely.tests
+    - python -m pytest --pyargs shapely.tests  # [not win]
+    # crash on pypy + windows
+    - python -m pytest -k "not (test_frechet_distance_densify or test_dump_binary_load_hex)" --pyargs shapely.tests  # [win]
 
 about:
   home: https://github.com/shapely/shapely
