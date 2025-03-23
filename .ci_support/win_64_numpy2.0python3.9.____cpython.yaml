@@ -5,17 +5,17 @@ c_stdlib:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge shapely_dev
+- conda-forge main
 geos:
-- 3.13.0
+- 3.13.1
 numpy:
-- '1.23'
+- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.11.* *_cpython
+- 3.9.* *_cpython
 target_platform:
 - win-64
 zip_keys:
