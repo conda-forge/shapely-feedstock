@@ -5,7 +5,7 @@ c_stdlib:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge shapely_dev
 geos:
 - 3.13.1
 numpy:
