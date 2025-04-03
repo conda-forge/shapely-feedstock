@@ -373,6 +373,3 @@ Feedstock Maintainers
 * [@phobson](https://github.com/phobson/)
 * [@xylar](https://github.com/xylar/)
 
-
-<!-- dummy commit to enable rerendering -->
-
