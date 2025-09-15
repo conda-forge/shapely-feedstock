@@ -7,6 +7,9 @@ package:
 source:
   url: https://pypi.org/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
   sha256: 500621967f2ffe9642454808009044c21e5b35db89ce69f8a2042c2ffd0e2772
+  patches:
+    - gh2311_frechet_distance.patch
+    - gh2318_coverage_union.patch
 
 build:
   number: 2
