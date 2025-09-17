@@ -1,0 +1,31 @@
+diff --git a/shapely/set_operations.py b/shapely/set_operations.py
+index 39692c6b3..f2d75d49d 100644
+--- a/shapely/set_operations.py
++++ b/shapely/set_operations.py
+@@ -562,6 +562,9 @@ def coverage_union(a, b, **kwargs):
+ 
+     This is an optimized version of union which assumes the polygons to be
+     non-overlapping.
++    If this assumption is not met, the exact result is not guaranteed
++    (depending on the GEOS version, it may return the input unchanged or raise
++    an error).
+ 
+     Parameters
+     ----------
+diff --git a/shapely/tests/test_set_operations.py b/shapely/tests/test_set_operations.py
+index 2fe66a5c8..9b357bd47 100644
+--- a/shapely/tests/test_set_operations.py
++++ b/shapely/tests/test_set_operations.py
+@@ -280,7 +280,11 @@ def test_coverage_union_overlapping_inputs():
+     polygon = Polygon([(1, 1), (1, 0), (0, 0), (0, 1), (1, 1)])
+     other = Polygon([(1, 0), (0.9, 1), (2, 1), (2, 0), (1, 0)])
+ 
+-    if shapely.geos_version >= (3, 12, 0):
++    if shapely.geos_version >= (3, 14, 0):
++        # Overlapping polygons raise an error again
++        with pytest.raises(shapely.GEOSException, match="TopologyException"):
++            shapely.coverage_union(polygon, other)
++    elif shapely.geos_version >= (3, 12, 0):
+         # Return mostly unchanged output
+         result = shapely.coverage_union(polygon, other)
+         expected = shapely.multipolygons([polygon, other])
