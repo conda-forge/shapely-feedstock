@@ -15,7 +15,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 geos:
-- 3.14.0
+- 3.14.1
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
@@ -28,6 +28,3 @@ python:
 - 3.10.* *_cpython
 target_platform:
 - osx-64
-zip_keys:
-- - python
-  - channel_sources
