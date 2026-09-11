@@ -5,11 +5,11 @@ package:
   version: {{ version.split('.post')[0] }}
 
 source:
-  url: https://pypi.org/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/S/Shapely/shapely-{{ version }}.tar.gz
   sha256: 2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<310]
   script:
     - set GEOS_INCLUDE_PATH=%LIBRARY_INC%  # [win]
